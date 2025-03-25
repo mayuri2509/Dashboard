@@ -23,7 +23,7 @@ function App() {
 
       const localStoragePosts: Post[] = JSON.parse(localStorage.getItem("posts") || "[]");
 
-      // Filter out API posts that exist in localStorage
+     
       const uniqueApiPosts = apiPosts.filter(apiPost => 
         !localStoragePosts.some(localPost => localPost.id === apiPost.id)
       );
