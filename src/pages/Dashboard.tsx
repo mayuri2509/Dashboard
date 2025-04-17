@@ -1,5 +1,5 @@
-import Sidebar from "../components/sidebar";
-import PostsTable from "../components/table";
+import Sidebar from "../components/Sidebar";
+import PostsTable from "../components/Table";
 import { Box } from "@mui/material";
 
 const drawerWidth = 200;

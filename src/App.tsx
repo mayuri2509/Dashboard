@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Sidebar from "./components/sidebar";
-import Dashboard from "./pages/dashboard";
-import AddNewPost from "./pages/createpost";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./pages/Dashboard";
+import AddNewPost from "./pages/CreatePost";
 import { useState, useEffect } from "react";
 import { ThemeProvider } from "./components/ThemeProvider";
-import Header from "./components/header";
+import Header from "./components/Header";
 import { CssBaseline } from "@mui/material";
 
 interface Post {
@@ -20,11 +20,9 @@ function App() {
     const fetchPosts = async () => {
       const apiResponse = await fetch("https://jsonplaceholder.typicode.com/posts");
       const apiPosts: Post[] = await apiResponse.json();
-
       const localStoragePosts: Post[] = JSON.parse(localStorage.getItem("posts") || "[]");
 
-     
-      const uniqueApiPosts = apiPosts.filter(apiPost => 
+      const uniqueApiPosts = apiPosts.filter(apiPost =>
         !localStoragePosts.some(localPost => localPost.id === apiPost.id)
       );
 
@@ -44,17 +42,14 @@ function App() {
     <ThemeProvider>
       <CssBaseline />
       <Header />
-      <Router>
-        <Sidebar />
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard posts={posts} />} />
-          <Route path="/createpost" element={<AddNewPost onAddPost={handleAddPost} />} />
-          <Route path="*" element={<Navigate to="/dashboard" />} />
-        </Routes>
-      </Router>
+      <Sidebar />
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard posts={posts} />} />
+        <Route path="/createpost" element={<AddNewPost onAddPost={handleAddPost} />} />
+        <Route path="*" element={<Navigate to="/dashboard" />} />
+      </Routes>
     </ThemeProvider>
   );
 }
 
 export default App;
-

@@ -25,10 +25,10 @@ const Header: React.FC = () => {
             border: `1px solid ${theme.palette.divider}`,
           }}
         >
-          <ToggleButton value="light">
+          <ToggleButton value="light" aria-label="light mode">
             <Brightness7 />
           </ToggleButton>
-          <ToggleButton value="dark">
+          <ToggleButton value="dark" aria-label="dark mode">
             <Brightness4 />
           </ToggleButton>
         </ToggleButtonGroup>
@@ -36,5 +36,5 @@ const Header: React.FC = () => {
     </AppBar>
   );
 };
-
+   
 export default Header;

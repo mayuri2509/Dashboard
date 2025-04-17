@@ -4,7 +4,6 @@ import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, IconButton, u
 import { Menu, Dashboard, PostAdd } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-
 const drawerWidth = 200;
 
 const Sidebar: React.FC = () => {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Pagination, Typography, Button, TextField, Box } from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper,
+   Pagination, Typography, Button, TextField, Box } from '@mui/material';
 
 interface Post {
   id: number;
@@ -79,6 +80,7 @@ const PostsTable: React.FC<PostsTableProps> = ({ posts }) => {
       </TableContainer>
 
       <Pagination
+        
         count={Math.ceil(filteredPosts.length / postsPerPage)}
         page={page}
         onChange={handleChange}

@@ -59,7 +59,7 @@ const AddNewPost: React.FC<AddNewPostProps> = ({ onAddPost }) => {
       </Button>
 
       <Dialog open={open} onClose={handleClose} >
-        <DialogTitle>Add New Post</DialogTitle>
+        <DialogTitle >Add New Post</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
